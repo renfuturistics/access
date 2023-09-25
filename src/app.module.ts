@@ -15,7 +15,20 @@ import { ItemsListModule } from './items-list/items-list.module';
 import { TiltCodesModule } from './tilt-codes/tilt-codes.module';
 
 @Module({
-  imports: [UsersModule, AssertInfoModule, AssertDailyReportModule, AssertOwnerInfoModule, CashinScheduleModule, CashTransModule, CurrentUserModule, DriverCashinScheduleModule, DriverInfoModule, DriverYangoReportsModule, ItemsListModule, TiltCodesModule],
+  imports: [
+    UsersModule,
+    AssertInfoModule,
+    AssertDailyReportModule,
+    AssertOwnerInfoModule,
+    CashinScheduleModule,
+    CashTransModule,
+    CurrentUserModule,
+    DriverCashinScheduleModule,
+    DriverInfoModule,
+    DriverYangoReportsModule,
+    ItemsListModule,
+    TiltCodesModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
