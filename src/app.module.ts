@@ -13,9 +13,15 @@ import { DriverInfoModule } from './driver-info/driver-info.module';
 import { DriverYangoReportsModule } from './driver-yango-reports/driver-yango-reports.module';
 import { ItemsListModule } from './items-list/items-list.module';
 import { TiltCodesModule } from './tilt-codes/tilt-codes.module';
-
+import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
   imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/Access', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }),
     UsersModule,
     AssertInfoModule,
     AssertDailyReportModule,

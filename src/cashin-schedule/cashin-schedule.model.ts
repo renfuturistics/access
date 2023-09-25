@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export const cashInScheduleSchema = new mongoose.Schema({
+export const CashInScheduleSchema = new mongoose.Schema({
   CashinTitle: {
     type: String,
     required: true,

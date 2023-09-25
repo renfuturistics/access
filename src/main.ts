@@ -18,7 +18,7 @@ export async function bootstrap() {
         if (!origin || allowList.includes(origin)) {
           callback(null, true); // Allow the request
         } else {
-          callback(new Error('Not allowed by aristore CORS')); // Deny the request
+          callback(new Error('Not allowed by access CORS')); // Deny the request
         }
       },
       methods: 'GET,PUT,POST,DELETE,OPTIONS',
@@ -26,12 +26,12 @@ export async function bootstrap() {
     },
   });
 
-  app.use(cookieParser());
+  // app.use(cookieParser());
   app.useBodyParser('json', { limit: '30mb' });
   app.setGlobalPrefix('api');
   app.use(helmet());
 
   await app.listen(port ? parseInt(port) : 7456);
-  Logger.verbose(`Aristore server started on port ${port}!\n`);
+  Logger.verbose(`Access server started on port ${port}!\n`);
 }
 bootstrap();

@@ -9,7 +9,7 @@ import {
 import { IAssertInfo } from './asset-info.model';
 @Injectable()
 export class AssertInfoService {
-  private constructor(
+  constructor(
     @InjectModel('AssertInfo')
     private readonly assertInfoModel: Model<IAssertInfo>,
   ) {}

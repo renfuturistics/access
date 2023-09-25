@@ -4,8 +4,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 @Injectable()
 export class CashinScheduleService {
-  private constructor(
-    @InjectModel('CashinSchedule')
+  constructor(
+    @InjectModel('CashInSchedule')
     private readonly cashinScheduleModel: Model<ICashInSchedule>,
   ) {}
 

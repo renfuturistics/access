@@ -6,6 +6,4 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 @Injectable()
-export class DriverCashinScheduleService {
-  private constructor() {}
-}
+export class DriverCashinScheduleService {}
