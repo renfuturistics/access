@@ -18,7 +18,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/Access', {
+    MongooseModule.forRoot(process.env.CLOUD_ATLAS_URL!!, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
