@@ -15,6 +15,8 @@ import { ItemsListModule } from './items-list/items-list.module';
 import { TiltCodesModule } from './tilt-codes/tilt-codes.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { DriverIncidentReportsModule } from './driver-incident-reports/driver-incident-reports.module';
+import { CashinSchedule1Module } from './cashin-schedule1/cashin-schedule1.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -34,6 +36,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     DriverYangoReportsModule,
     ItemsListModule,
     TiltCodesModule,
+    DriverIncidentReportsModule,
+    CashinSchedule1Module,
   ],
   controllers: [AppController],
   providers: [AppService],
