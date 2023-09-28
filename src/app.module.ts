@@ -17,9 +17,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DriverIncidentReportsModule } from './driver-incident-reports/driver-incident-reports.module';
 import { CashinSchedule1Module } from './cashin-schedule1/cashin-schedule1.module';
+import { Sheet1Module } from './sheet1/sheet1.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    TypeOrmModule.forRoot(),
     MongooseModule.forRoot(process.env.CLOUD_ATLAS_URL!!, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -38,6 +41,7 @@ import { CashinSchedule1Module } from './cashin-schedule1/cashin-schedule1.modul
     TiltCodesModule,
     DriverIncidentReportsModule,
     CashinSchedule1Module,
+    Sheet1Module,
   ],
   controllers: [AppController],
   providers: [AppService],
