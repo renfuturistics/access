@@ -9,8 +9,6 @@ export class tbl_Users {
   @Column()
   Surname: string;
   @Column()
-  FullNames: string;
-  @Column()
   Designation: string;
   @Column()
   Access: string;

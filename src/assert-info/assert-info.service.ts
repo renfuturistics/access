@@ -1,22 +1,25 @@
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { AssertInfo } from './assert-info.type.js';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { tbl_AssertInfo } from './assert-info.entity.js';
+
 import {
   BadGatewayException,
   BadRequestException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { IAssertInfo } from './asset-info.model';
+
 @Injectable()
 export class AssertInfoService {
   constructor(
-    @InjectModel('AssertInfo')
-    private readonly assertInfoModel: Model<IAssertInfo>,
+    @InjectRepository(tbl_AssertInfo)
+    private readonly repository: Repository<tbl_AssertInfo>,
   ) {}
 
-  async createAssertInfo(body: any) {
-    const assertInfo = await this.assertInfoModel.create(body);
-    if (!assertInfo) throw new BadRequestException('Failed to insert data');
-    return assertInfo;
+  async createAssert(assertInfo: AssertInfo) {
+    const newInfo = this.repository.create({ ...assertInfo });
+    return this.repository.save(newInfo);
   }
 }

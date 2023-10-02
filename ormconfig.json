@@ -1,10 +1,10 @@
 {
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "root",
-    "password": "root",
-    "database": "my_nestjs_project",
-    "entities": ["src/**/**.entity{.ts,.js}"],
-    "synchronize": true
-  }
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "Tanjiro@88",
+  "database": "my_nestjs_project",
+  "entities": ["src/**/**.entity{.ts,.js}"],
+  "synchronize": true
+}
