@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
+import { AssertOnwerInfo } from './assert-owner-info/assert-owner.type';
 import { AssertInfoModule } from './assert-info/assert-info.module';
 import { AssertDailyReportModule } from './assert-daily-report/assert-daily-report.module';
 import { AssertOwnerInfoModule } from './assert-owner-info/assert-owner-info.module';
@@ -13,8 +14,8 @@ import { DriverInfoModule } from './driver-info/driver-info.module';
 import { DriverYangoReportsModule } from './driver-yango-reports/driver-yango-reports.module';
 import { ItemsListModule } from './items-list/items-list.module';
 import { TiltCodesModule } from './tilt-codes/tilt-codes.module';
-import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+
+import { ConfigModule } from '@nestjs/config';
 import { DriverIncidentReportsModule } from './driver-incident-reports/driver-incident-reports.module';
 import { Sheet1Module } from './sheet1/sheet1.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -32,6 +33,7 @@ import { tbl_DriverYangoReports } from './driver-yango-reports/driver-yango-repo
 import { tbl_ItemsList } from './items-list/items-list.entity';
 import { tbl_TiltCodes } from './tilt-codes/tilt-codes.entity';
 import { tbl_Users } from './users/user.entity';
+import { Sheet } from './sheet1/sheet.entity';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -56,12 +58,14 @@ import { tbl_Users } from './users/user.entity';
         tbl_ItemsList,
         tbl_TiltCodes,
         tbl_Users,
+        Sheet,
       ],
       synchronize: true,
     }),
 
     UsersModule,
     AssertInfoModule,
+
     AssertDailyReportModule,
     AssertOwnerInfoModule,
     CashinScheduleModule,

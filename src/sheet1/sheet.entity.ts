@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Sheet1 {
+export class Sheet {
   @PrimaryGeneratedColumn()
   ID: string;
   @Column({ type: 'date' })

@@ -8,11 +8,10 @@ import {
   BadGatewayException,
   BadRequestException,
   Injectable,
-  NotFoundException,
 } from '@nestjs/common';
 
 @Injectable()
-export class AssertOwnerInfo {
+export class AssertOwnerInfoService {
   constructor(
     @InjectRepository(tbl_AssertOwnerInfo)
     private readonly repository: Repository<tbl_AssertOwnerInfo>,
