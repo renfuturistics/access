@@ -39,11 +39,11 @@ import { Sheet } from './sheet1/sheet.entity';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'sql8.freesqldatabase.com',
       port: 3306,
-      username: 'root',
-      password: 'Tanjiro@88',
-      database: 'my_nestjs_project',
+      username: 'sql8651442',
+      password: 'zzNN8tj1QT',
+      database: 'sql8651442',
       entities: [
         tbl_AssertDailyReports,
         tbl_AssertInfo,
